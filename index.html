@@ -4,102 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>One Month Anniversary</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #ffe4ec, #fff0f5);
-      font-family: 'Poppins', sans-serif;
-      color: #4b2e2e;
+      background: linear-gradient(to bottom right, #ffe0ec, #ffc1cc);
+      font-family: 'Sacramento', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
 
     .card {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 30px 20px;
-      background: #ffffffcc;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      animation: fadeIn 1.5s ease;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 380px;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .card h1 {
-      font-family: 'Sacramento', cursive;
-      font-size: 3em;
-      color: #d63384;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 1.2em;
-      margin: 10px 0;
-      color: #555;
-    }
-
-    .heartbeat {
+    .heart {
       width: 60px;
       height: 60px;
-      background: #ff6f91;
-      margin: 20px auto;
+      background: #e6005c;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-45deg);
+      animation: heartbeat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      background: #e6005c;
       border-radius: 50%;
-      animation: heartbeat 1.5s infinite;
-      box-shadow: 0 0 10px rgba(255,111,145,0.5);
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -30px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 30px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #c2185b;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.4em;
+      color: #5c0036;
+      margin: 20px 0 10px;
+    }
+
+    .cartoon {
+      margin: 15px 0;
+    }
+
+    .cartoon img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    footer {
+      font-size: 1em;
+      color: #888;
+      margin-top: 30px;
     }
 
     @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-    }
-
-    .gif {
-      margin-top: 20px;
-    }
-
-    .gif img {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 12px;
+      0% { transform: translateX(-50%) rotate(-45deg) scale(1); }
+      25% { transform: translateX(-50%) rotate(-45deg) scale(1.2); }
+      50% { transform: translateX(-50%) rotate(-45deg) scale(1); }
+      75% { transform: translateX(-50%) rotate(-45deg) scale(1.2); }
+      100% { transform: translateX(-50%) rotate(-45deg) scale(1); }
     }
 
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    @media (max-width: 600px) {
-      .card h1 {
-        font-size: 2.2em;
+    @media (max-width: 400px) {
+      .card {
+        padding: 30px 20px;
+        max-width: 90%;
       }
 
-      .card p {
-        font-size: 1em;
+      h1 {
+        font-size: 2em;
       }
 
-      .heartbeat {
-        width: 45px;
-        height: 45px;
+      p {
+        font-size: 1.2em;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="card">
-    <h1>For the Best Girlfriend</h1>
-    <div class="heartbeat"></div>
-    <p>Happy 1 Month Anniversary, my love!</p>
-    <p>Every day with you feels magical, and this first month was just the beginning of our beautiful story. 💕</p>
-    <div class="gif">
-      <img src="1.gif" alt="Cute Love GIF">
+    <div class="heart"></div>
+    <h1>One Month Together</h1>
+    <p>For the Best Girlfriend<br>in the Whole World 💖</p>
+    <div class="cartoon">
+      <img src="1.gif" alt="Cute cartoon character">
     </div>
-    <p style="margin-top: 30px; font-weight: 600;">Forever yours, <br>❤️ Pranto</p>
+    <p>One month with you feels like a dream.<br>Here's to forever and ever!</p>
+    <footer>With all my love,<br>Pranto 💕</footer>
   </div>
-
 </body>
 </html>
